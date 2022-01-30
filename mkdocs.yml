@@ -1,4 +1,5 @@
 site_name: AMS documentation
+repo_url: https://github.com/FIIT-TEAM8/team_documentation
 theme:
   name: material
   palette: 
