@@ -1,8 +1,8 @@
-# Welcome to AMS team documentation
+# AMS team documentation
 
 You can edit this documentation directly in Github without needing to clone the repository to your machine. Github also offers a markdown preview, which is very convenient for this purpouse. Simply start by creating a file or a folder inside the **docs** directory of the repository and after commiting these changes, updated documentation will automatically be redeployed containing your changes. 
 
-This documentation uses [mkdocs](https://www.mkdocs.org/) project with the [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) plugin.
+This documentation uses [mkdocs](https://www.mkdocs.org/) project with the [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) plugin. You can edit **mkdocs.yml** to change the appearance and behaviour of this site. For details, refer to the mkdocs-material website.
 
 ## Documentation structure
 Each module should be contained inside the **modules** folder. It can be represented by a single markdown file or a folder containing multiple related documents. This structure will be automatically reflected in the page navigation.
