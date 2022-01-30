@@ -1,4 +1,4 @@
-# AMS team documentation
+# Home
 
 You can edit this documentation directly in Github without needing to clone the repository to your machine. Github also offers a markdown preview, which is very convenient for this purpouse. Simply start by creating a file or a folder inside the **docs** directory of the repository and after commiting these changes, updated documentation will automatically be redeployed containing your changes. 
 
