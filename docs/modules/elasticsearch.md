@@ -70,7 +70,7 @@ This type of analyzer is used during indexing documents and querying results. Ea
   
 Last command in Development section runs network with Elasticsearch, MongoDB, Kibana and our own container which takes data from MongoDB and index them in Elasticsearch.
 
-FUTURE WORK: Container for indexing should read data from MongoDB on our remote server, seed local database and after that index all downloaded data in local Elasticsearch.
+**FUTURE WORK:** Container for indexing should read data from MongoDB on our remote server, seed local database and after that index all downloaded data in local Elasticsearch.
 
 ## Deployment
 After any commit / merge to the main branch, a github action is ran that builds the docker image, pushes it to dockerhub and updates the running container on our production server.  
