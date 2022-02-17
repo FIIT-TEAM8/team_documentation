@@ -8,6 +8,6 @@ AMS is a portal for searching for natural and/or legal persons with an unfavorab
 
 ## How use AMS
 
-[Click here to learn how to search for the person.]()
+[Click here to learn how to search for the person.](2_how_to_search.md)
 
 [Click here to learn how to ....]()
