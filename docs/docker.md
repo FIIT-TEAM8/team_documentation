@@ -33,7 +33,7 @@ To encrypt env directory and create new archive:
 ```
 ./encrypt_env.sh password123
 ```
-This will compress and encrypt the **env** directory with it's contents and create a **env.tar.gz.enc** on the same level as the script itself.
+This will compress and encrypt the **env** directory with it's contents and create **env.tar.gz.enc** on the same level as the script itself.
 
 !!! warning "When to encrypt env directory and push it to Github"
 
