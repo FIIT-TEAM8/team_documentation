@@ -18,3 +18,23 @@ Each service should have it's own .env file, however some .env files **should be
 !!! note "Existing example"
 
     Flask server (API) and scraper components both connect to mongoDB using the same credentials. They each have their separate .env files (flask.env and scraper.env),       but both use one common .env file - **mongo_connection.env**. This file contains connection URL, login credentials and other data required for mongoDB access. This       approach makes it easy to change this data when we decide to change login credentials or rename our database collections.
+
+### Versioning
+The docker-compose file controlling our main infrastructure is versioned in [this](https://github.com/FIIT-TEAM8/service_config) repository. Along with this file there are also our **.env** files containing configuration parameters for each service. As these files can also contain passwords, the **tar.gz**
+ is encrypted using **AES-256** standard. This was achieved by running **encrypt_env.sh** shell script and to decrypt this archive and prepare **env** directory for use, simply run the **decrypt_env.sh** script. Both scripts expect 1 positional argument: a password used to for encryption / decryption. The password used is contained in our keepass password vault. E.g:
+ 
+To decrypt the archive, run:
+```
+./decrypt_env.sh password123
+```
+This will decrypt and extract **env** directory to the same level as the script itself.
+
+To encrypt env directory and create new archive:
+```
+./encrypt_env.sh password123
+```
+This will compress and encrypt the **env** directory with it's contents and create a **env.tar.gz.enc** on the same level as the script itself.
+
+!!! warning "When to encrypt env directory and push it to Github"
+
+    You almost never want to run the script for encrypting your env directory. The environmental values versioned on Github should be set to values working for our production server. If you change something inside env directory on your local machine when developing, **do not** push it to Github.
