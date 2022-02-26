@@ -17,4 +17,4 @@ Each service should have it's own .env file, however some .env files **should be
 
 !!! note "Existing example"
 
-Flask server (API) and scraper components both connect to mongoDB using the same credentials. They each have their separate .env files (flask.env and scraper.env), but both use one common .env file - **mongo_connection.env**. This file contains connection URL, login credentials and other data required for mongoDB access. This approach makes it easy to change this data when we decide to change login credentials or rename our database collections.
+    Flask server (API) and scraper components both connect to mongoDB using the same credentials. They each have their separate .env files (flask.env and scraper.env),       but both use one common .env file - **mongo_connection.env**. This file contains connection URL, login credentials and other data required for mongoDB access. This       approach makes it easy to change this data when we decide to change login credentials or rename our database collections.
