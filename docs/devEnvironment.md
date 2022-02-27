@@ -11,7 +11,7 @@ It is important that you have WSL 2 ready and configured. Every command executed
 
 Clone the Github repository and _cd_ into it:
 ```
-git clone https://github.com/FIIT-TEAM8/dev_environment && cd service_config
+git clone https://github.com/FIIT-TEAM8/dev_environment && cd dev_environment
 ```
 Create a python virtual environment (if _python3_ does not work try _python_), activate it and install dependencies:
 ```
