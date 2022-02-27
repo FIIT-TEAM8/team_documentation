@@ -41,13 +41,15 @@ The services are available on your localhost:\<PORT\>. The ports used can be che
 ## Configuration
 The dev_environment repository comes with a **config.yaml** file that can be used to change the behaviour of your development environment. 
 
+
+!!! warning "Anytime you change config.yaml you have to **re-run main.py and docker-compose** to see these changes"
+
 ### redundant_services
 The first key option is **redundant_services**. This is a list of services that will be **deleted** from **docker-compose.yml** and thus won't run in your dev environment. These are by default services like our documentation server or certbot, but **here you can specify a service that you want to work on**. For example, if you want to develop scraper, include it in this list and the scraper component will not be created as a container.
 
 ### service_details
 This is a section containing details about our services. A service name is a key to another subsection, where options for that service are present.
 
-!!! warning "Anytime you change config.yaml you have to **re-run main.py and docker-compose** to see these changes"
 
 Anything under the **compose_adjustment** subsection should be a valid **docker-compose.yml** service configuration values. Here you can adjust what will be added to services in docker-compose.yml when you run **main.py** script. For example, if you want to add ports configuration to scraper service, your config.yaml should look like this:
 
