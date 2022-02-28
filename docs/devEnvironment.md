@@ -78,4 +78,9 @@ This will append **discovery.type=single-node** to env variables for es01 servic
 
 !!! tip "Fun fact / tip"
     Environment variables declared in **environment** section in **docker-compose.yml** will override variables with the same name declared in .env file that is included in docker-compose.yml. That means that you can use **config.yaml** to override environmental variables used in our production environment.
+    
+### NGINX
+If you choose to run NGINX in development environment, you need to configure a few more things. In this repository, there is **nginx.app.conf** that contains NGINX configuration for dev environment. You can see that any support for TLS is removed and the server is listening only on port 80.
+
+Anything declared inside **location** section in this config **has to be** a service present in your currently created dev environment. For example, if in your **config.yaml** you declared documentation as a redundant service, there has to be no location section referencing this service in your NGINX config file.
 
