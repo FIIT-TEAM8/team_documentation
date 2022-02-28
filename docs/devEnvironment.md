@@ -36,7 +36,7 @@ cd service_config
 ```
 docker-compose up -d
 ```
-The services are available on your localhost:\<PORT\>. The ports used can be checked in the **docker-compose.yml** file you just ran, but they are the same values as our production environment.
+The services are available on your localhost:PORT. The ports used can be checked in the **docker-compose.yml** file you just ran, but they are the same values as our production environment.
   
 ## Configuration
 The dev_environment repository comes with a **config.yaml** file that can be used to change the behaviour of your development environment. 
