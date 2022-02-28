@@ -67,6 +67,7 @@ If the key specified in **compose_adjustment** already exists in docker-compose.
 The default config.yaml contains some compose_adjustments that you can look at for another example:
 ```yaml
 ...
+service_details:
   es01:
     compose_adjustment:
       environment:
