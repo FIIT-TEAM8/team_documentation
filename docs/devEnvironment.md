@@ -82,5 +82,5 @@ This will append **discovery.type=single-node** to env variables for es01 servic
 ### NGINX
 If you choose to run NGINX in development environment, you need to configure a few more things. In this repository, there is **nginx.app.conf** that contains NGINX configuration for dev environment. You can see that any support for TLS is removed and the server is listening only on port 80.
 
-Anything declared inside **location** section in this config **has to be** a service present in your currently created dev environment. For example, if in your **config.yaml** you declared documentation as a redundant service, there has to be no location section referencing this service in your NGINX config file.
+Anything declared inside **location** section in this config **has to be** a service present in your currently created dev environment. For example, if in your **config.yaml** you declared documentation as a redundant service, there can't be any location section referencing this service in your NGINX config file.
 
