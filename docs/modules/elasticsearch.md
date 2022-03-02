@@ -65,15 +65,13 @@ This type of analyzer is used during indexing documents and querying results. Ea
   * python -m venv .\venv
   * .\venv\Scripts\activate
   * pip install -r requirements.txt
-  * create your own mongo_db.env file according to mongo_db.example.env
+  * create your own mongo_db.env and es_indexer file in configs folder based on their examples
   * docker-compose up -d
   
-Last command in Development section runs network with Elasticsearch, MongoDB, Kibana and our own container which takes data from MongoDB and index them in Elasticsearch.
-
-**FUTURE WORK:** Container for indexing should read data from MongoDB on our remote server, seed local database and after that index all downloaded data in local Elasticsearch.
+Last command in Development section runs network with Elasticsearch, MongoDB, Kibana and our own container which connects through ssh MongoDB tunneling to our production database. After successfull connection it retrieves articles, which will be indexed in Elasticsearch and used for seeding local MongoDB.
 
 ## Deployment
-After any commit / merge to the main branch, a github action is ran that builds the docker image, pushes it to dockerhub and updates the running container on our production server.  
+After any commit / merge to the main branch, a github action is ran that builds the docker image for es_indexer and pushes it to dockerhub.  
   
 ## Test
   * cd ./test
