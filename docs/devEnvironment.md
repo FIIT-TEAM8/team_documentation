@@ -86,8 +86,8 @@ If you choose to run NGINX in development environment, you need to configure a f
 
 Anything declared inside **location** section in this config **has to be** a service present in your currently created dev environment. For example, if in your **config.yaml** you declared documentation as a redundant service, there can't be any location section referencing this service in your NGINX config file.
 
-### Pulling data from production through es_indexer
-Each time you run **docker-compose up** command, es_indexer container with python script will wait by default 60 seconds for Elasticsearch and MongoDB containers to start (you can change this time through **WAIT_SECONDS** in es_indexer.env).
+### Pulling data from production database
+Each time you run **docker-compose up**, **es_indexer** container with python script will wait by default 60 seconds for Elasticsearch and MongoDB containers to start (you can change this time through **WAIT_SECONDS** in es_indexer.env).
 When, the time pass es_indexer connects through [ssh MongoDB tunneling](https://stackoverflow.com/questions/56239184/python-script-to-connect-to-remote-mongodb-using-ssh-tunnel-and-pymongo-client-i) to MongoDB articles collection on our production machine. It retrieves by default 100 articles (you can change this through **NUMBER_OF_ARTICLES** in es_indexer.env)
 index them in your local Elasticsearch container and seed your local MongoDB with them.
 
