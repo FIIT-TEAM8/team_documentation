@@ -64,8 +64,6 @@ service_details:
 ```
 If the key specified in **compose_adjustment** already exists in docker-compose.yml, it will override the value if it is a simple key-value pair and append to list if it is a list.
 
-!!! warning "Currently you can't use this functionality for es_indexer container, because it doesn't exist in docker-compose.yml"
-
 The default config.yaml contains some compose_adjustments that you can look at for another example:
 ```yaml
 ...
