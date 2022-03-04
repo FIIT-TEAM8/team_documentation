@@ -27,6 +27,8 @@ _(make sure you are in the **root** folder)_
 
 ### Overview
 
+This is the default configuration used while developing the application or while running in production. 
+
 | Variable Name | Default Value | Description |
 | ------------- | ------------- | ----------- |
 | REACT_APP_PORT  | `8080`  | Where the application can be reached _(sets for both backend and frontend)_ |
@@ -44,7 +46,27 @@ _(make sure you are in the **root** folder)_
 Environment variables can be easily modified for frontend and backend separately in `./frontend/.env` and `./backend/.env` respectively. 
 The frontend variables need to begin with _REACT\_APP\__, otherwise it won't be loaded into the react application. The variables in _.env_ files will be overwritten by outside declarations. 
 
-#### Example: 
+#### Development _docker_ environment
+
+These variables need to be changed:
+
+| Name | Value | Note |
+| ---- | ----- | ---- |
+| PUBLIC_URL | `/ams` | The app can be accessed at `http://localhost://8080/ams` |
+| USE_SERVER_PUBLIC_URL | `true` | |
+| IS_HTTPS | `false` | This does not affect anything at the moment, but will in the future |
+| DATA_API_HOST | `http://localhost:5000` | If the data api is not running in a container |
+
+Alternative without subroutes (not recommended):
+
+| Name | Value | Note |
+| ---- | ----- | ---- |
+| PUBLIC_URL | `/` | The app can be accessed at `http://localhost://8080/` |
+| USE_SERVER_PUBLIC_URL | `false` |  |
+| IS_HTTPS | `false` | |
+| DATA_API_HOST | `http://flask_server:5000`| |
+
+#### Examples: 
 
 Running _(linux)_ `REACT_APP_PORT=4000 npm run dev` will overwrite the REACT_APP_PORT for both backend and frontend. The same should apply while declaring variables while running the app in a _Docker_ container.
 
