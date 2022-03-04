@@ -27,12 +27,12 @@ _(make sure you are in the **root** folder)_
 
 | Variable Name | Default Value | Description |
 | ------------- | ------------- | ----------- |
-| PORT  | 8080  | Where the application can be reached via the Express server |
-| IS_HTTPS  | _true_ (production) \| _false_ (else) | Communication protocol between frontend and backend |
-| COOKIE_AGE | 1000 * 60 * 60 * 24 * 30 _(30 days)_ | Age of server defined cookies (in ms) |
-| BUILD_PATH | '../frontend/build' | Where the build of the React app resides |
-| DATA_API_HOST | 'http://flask_server:5000' | Destination of data api calls |
-| DEV_DATA_API_HOST | 'https://localhost:5000/api' | Destination of data api calls when not in production |
-| DATA_API_VERSION | 'v3' | Which version of data api should the calls be forwarded to |
-| NODE_ENV | 'production'/'dev' | Set by starting scripts automatically |
+| PORT  | `8080`  | Where the application can be reached via the Express server |
+| IS_HTTPS  | `true` (production) \| `false` (else) | Communication protocol between frontend and backend |
+| COOKIE_AGE | `1000 * 60 * 60 * 24 * 30` _(30 days)_ | Age of server defined cookies (in ms) |
+| BUILD_PATH | `../frontend/build` | Where the build of the React app resides |
+| DATA_API_HOST | `http://flask_server:5000` | Destination of data api calls |
+| DEV_DATA_API_HOST | `https://localhost:5000/api` | Destination of data api calls when not in production |
+| DATA_API_VERSION | `v3` | Which version of data api should the calls be forwarded to |
+| NODE_ENV | `production` \| `dev` | Set by npm scripts automatically |
 
