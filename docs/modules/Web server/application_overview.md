@@ -80,3 +80,14 @@ However, if we want to set the variable using the _.env_ files, we need to modif
 | ---- | ----------- | ----------- | ------------ |
 | NODE_ENV | Backend & Frontend | Usually set to `production` or `development`, set by npm scripts | `./backend/config.js`, `./frontend/src/Utils/APIConnector.js` |
 
+### Production
+
+Enironment variables set in production (in node.env):
+
+| Name | Value |
+| ---- | ----- |
+| REACT_APP_PORT | `8080` |
+| PUBLIC_URL | `/ams` |
+| USE_SERVER_PUBLIC_URL | `false` |
+
+
