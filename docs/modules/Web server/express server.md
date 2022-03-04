@@ -25,6 +25,8 @@ _(make sure you are in the **root** folder)_
 
 ## Environment variables
 
+### Overview
+
 | Variable Name | Default Value | Description |
 | ------------- | ------------- | ----------- |
 | PORT  | `8080`  | Where the application can be reached via the Express server |
@@ -34,5 +36,9 @@ _(make sure you are in the **root** folder)_
 | DATA_API_HOST | `http://flask_server:5000` | Destination of data api calls |
 | DEV_DATA_API_HOST | `https://localhost:5000/api` | Destination of data api calls when not in production |
 | DATA_API_VERSION | `v3` | Which version of data api should the calls be forwarded to |
-| NODE_ENV | `production` \| `dev` | Set by npm scripts automatically |
+| NODE_ENV | `production` \| `dev` | Set by npm scripts automatically _(should not be changed manually)_ |
 
+### Development
+
+While in development, environment variables can be changed by creating a .env file in ./backend, like `./backend/.env`. 
+An alternative is setting the variables manually.
