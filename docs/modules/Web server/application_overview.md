@@ -36,6 +36,8 @@ _(make sure you are in the **root** folder)_
 | DATA_API_HOST | `http://flask_server:5000` | Destination of data api calls |
 | DEV_DATA_API_HOST | `https://localhost:5000/api` | Destination of data api calls when not in production |
 | DATA_API_VERSION | `v3` | Which version of data api should the calls be forwarded to |
+| PUBLIC_URL | `/ams` | Subroute on which the application resides _(sets for both backend and frontend)_ |
+| USE_SERVER_PUBLIC_URL | `false` | Should the express server use the PUBLIC_URL (this is not needed if connecting to node_server via NGINX) |
 
 ### Development
 
@@ -55,5 +57,4 @@ However, if we want to set the variable using the _.env_ files, we need to modif
 | Name | Environment | Description | Use Examples |
 | ---- | ----------- | ----------- | ------------ |
 | NODE_ENV | Backend & Frontend | Usually set to `production` or `development`, set by npm scripts | `./backend/config.js`, `./frontend/src/Utils/APIConnector.js` |
-| PUBLIC_URL | Frontend | Set in `./frontend/package.json` as `homepage` field (useful when app is running in a subroute) | `./frontend/src/Utils/APIConnector.js` |
 
