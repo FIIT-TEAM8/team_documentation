@@ -5,9 +5,24 @@
 
 ---
 
-The scrapper works by reading the Google news RSS stream source using various crimes as keywords. After getting article links from Google news, we parse the source page HTML by extracting only heading and paragraph tags, stripping the content to the bare minimum. This text is than saved to MongoDB and a crime that was used to find this article is linked to the article ID.
+The scrapper works by reading the Google news RSS stream source using various crimes as keywords. After getting article links from Google news, we parse the source page HTML by extracting only heading and paragraph tags, stripping the content to the bare minimum. Scraper saves scraped article in MongoDB. After sucessfull saving MongoDB returns article's *\_id*, which refers to the item in DB and document in Elasticsearch index, because in the end of the pipeline scraper indexes scraped document.
 
+This table contains fields, which are stored in each item in MongoDB and each document in Elasticsearch index
 
+| Field name | MongoDB Type | Elastic | Description |
+| ------------- | ------------- | ----------- |----------- |
+| html  | `string`  | `text`  | HTML of scraped article |
+| publish | `string`  | `text` | published date of the article |
+| link | `string`  | `text` | link to the article |
+| region | `string`  | `text` | article's region |
+| language | `string`  | `text` | article's language |
+| keywords | `array`  | `text` (actually array, ref. tip) | crime keywords, which are mentioned in article's text |
+| title | `string`  | `text` | article title |
+
+!!! tip "Fun fact / tip"
+    In Elasticsearch, there is no dedicated array data type. Any field can contain zero or more values by default, however, all values in the array must be of the same data type. [source](https://www.elastic.co/guide/en/elasticsearch/reference/current/array.html)
+    
+!!! "warning" keywords are always in english, even when text of the scraped article is in different language.
 
 
 ## Development
@@ -26,6 +41,12 @@ This application expects that you have a running mongoDB instance ready. Check *
  * MONGO_USER - user used for connection do db. Default is **root**
  * MONGO_PASSWORD - password for said user. Default is **example**
  * MONGO_DB - database name to be used. Default is **ams_db**
+ 
+### Elasticsearch connection
+ * ES_HOST - URL to server running Elasticsearch. Default is **localhost**
+ * ES_PORT - port for Elasticsearch. Default is **9200**
+ * ELASTIC_INDEX_CONFIG - name of the index configuration file. Default is **articles_index_config.json**
+ * ELASTIC_INDEX_NAME - name of the index, which is created based on index configuration file. Default is **articles_index**
 
 ### Running the scrapper
 This application can be launched using two different methods: standalone or using scrapyD server abstraction. For quick testing when developing, the standalone method is sufficient. Details about scrapyD are discussed in the **ScrapyD** chapter. 
@@ -36,16 +57,18 @@ For running the scrapper in standalone mode, follow these steps:
   * scrapy scrawl news_spider <ARGUMENTS>
 
 Where arguments can be:
-  * crimes_file=<FILENAME> - filename of crimes to parse. (murder.txt / list_of_crimes.txt / 1_part.txt etc.) The path to file should be relative from **scraper/scraper/crimes/** folder.
+  * crimes_file=<FILENAME> - filename of crimes to parse. (list_of_crimes_english.txt / list_of_crimes_slovak.txt / etc.) The path to file should be relative from **scraper/scraper/crimes/** folder.
   * search_from=YYYY-MM-DD - date
   * search_to=YYYY-MM-DD - date
   * locale=locale - set your locale (en-gb / sk-sk etc.) Available locales are listed in scraper/scraper/gnewsparser/\_\_init\_\_.py file in \_\_LOCALE variable. Each locale code represents LANGUAGE-COUNTRY combo.
+ 
+!!! "warning" Some countries doesn't support LANGUAGE-COUNTRY combo and are only accessible with [language](https://developers.google.com/admin-sdk/directory/v1/languages). Scraper can handle it, but leave blank string in region in both MongoDB item and Elasticsearch document.
  
 Arguments need to be passed using scrapy anotation, with the _-a_ switch.
 Example:
  
 ```
- scrapy crawl news_spider -a crimes_file=murder.txt -a search_from=2020-01-01 -a search_to=2020-01-05 -a locale=en-gb
+ scrapy crawl news_spider -a crimes_file=list_of_crimes_english.txt -a search_from=2020-01-01 -a search_to=2020-01-05 -a locale=en-gb
 ```
 
 ### Publishing changes to Github
