@@ -56,7 +56,8 @@ For running the scrapper in standalone mode, follow these steps:
   * cd .\scraper
   * scrapy crawl news_spider <ARGUMENTS>
 
-Where arguments can be: 
+Where arguments can be:
+    
   * crimes_file=<FILENAME> - filename of crimes to parse. (list_of_crimes_english.txt / list_of_crimes_slovak.txt / etc.) The path to file should be relative       from **scraper/scraper/crimes/** folder.
   * search_from=YYYY-MM-DD - date
   * search_to=YYYY-MM-DD - date
