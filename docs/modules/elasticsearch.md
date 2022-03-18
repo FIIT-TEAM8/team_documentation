@@ -53,8 +53,11 @@ This type of analyzer is used during indexing documents and querying results.
 | link | `text` | link to the article |
 | region| `text` | article's region |
 | language | `text` | article's language |
-| keywords | `text` | crime keywords, which are mentioned in article's text |
+| keywords | `text` (actually array, ref. tip) | crime keywords, which are mentioned in article's text |
 | title | `text` | article title |
+
+!!! tip "Fun fact / tip"
+    In Elasticsearch, there is no dedicated array data type. Any field can contain zero or more values by default, however, all values in the array must be of the same data type. [source](https://www.elastic.co/guide/en/elasticsearch/reference/current/array.html)
 
 Field values of each document are stored only in *_source* field, which is necessarry for some fundamental [functionality](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-source-field.html). Corresponding code to fields in configuration index file is below.
 
@@ -104,9 +107,6 @@ Field values of each document are stored only in *_source* field, which is neces
     }
   }
 ```
-
-!!! tip "Fun fact / tip"
-    In Elasticsearch, there is no dedicated array data type. Any field can contain zero or more values by default, however, all values in the array must be of the same data type. [source](https://www.elastic.co/guide/en/elasticsearch/reference/current/array.html)
 
 Basic attributes in *\_source* field aren't stored, because of sparing saving space.
 
