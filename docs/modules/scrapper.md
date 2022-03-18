@@ -62,7 +62,7 @@ Where arguments can be:
   * search_to=YYYY-MM-DD - date
   * locale=locale - set your locale (en-gb / sk-sk etc.) Available locales are listed in scraper/scraper/gnewsparser/\_\_init\_\_.py file in \_\_LOCALE variable. Each locale code represents LANGUAGE-COUNTRY combo.
  
-!!! "warning" Some countries doesn't support LANGUAGE-COUNTRY combo and are only accessible with [language](https://developers.google.com/admin-sdk/directory/v1/languages). Scraper can handle it, but leave blank string in region in both MongoDB item and Elasticsearch document.
+!!! warning "Some countries doesn't support LANGUAGE-COUNTRY combo and are only accessible with [language](https://developers.google.com/admin-sdk/directory/v1/languages). Scraper can handle it, but leave blank string in region in both MongoDB item and Elasticsearch document."
  
 Arguments need to be passed using scrapy anotation, with the _-a_ switch.
 Example:
