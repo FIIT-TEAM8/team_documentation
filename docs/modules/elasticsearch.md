@@ -42,7 +42,9 @@ It uses Standard analyzer with filtering english stop words and converting text 
 }
 ```
 
-This type of analyzer is used during indexing documents and querying results. Each document contains this fields:
+This type of analyzer is used during indexing documents and querying results.
+
+## Fields in document
 
 | Field name | Type | Description |
 | ------------- | ------------- | ----------- |
@@ -52,7 +54,7 @@ This type of analyzer is used during indexing documents and querying results. Ea
 | region| `text` | article's region |
 | language | `text` | article's language |
 | keywords | `text` | crime keywords, which are mentioned in article's text |
-| title | `array` | article title |
+| title | `text` | article title |
 
 Field values of each document are stored only in *_source* field, which is necessarry for some fundamental [functionality](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-source-field.html). Corresponding code to fields in configuration index file is below.
 
@@ -89,7 +91,7 @@ Field values of each document are stored only in *_source* field, which is neces
         "search_analyzer": "english_stop_analyzer"
     },
     "keywords": {
-        "type": "array",
+        "type": "text",
         "store": false,
         "analyzer": "english_stop_analyzer",
         "search_analyzer": "english_stop_analyzer"
@@ -102,6 +104,9 @@ Field values of each document are stored only in *_source* field, which is neces
     }
   }
 ```
+
+!!! tip "Fun fact / tip"
+    In Elasticsearch, there is no dedicated array data type. Any field can contain zero or more values by default, however, all values in the array must be of the same data type. [source](https://www.elastic.co/guide/en/elasticsearch/reference/current/array.html)
 
 Basic attributes in *\_source* field aren't stored, because of sparing saving space.
 
