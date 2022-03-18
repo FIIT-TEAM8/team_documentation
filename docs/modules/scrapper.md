@@ -22,7 +22,7 @@ This table contains fields, which are stored in each item in MongoDB and each do
 !!! tip "Fun fact / tip"
     In Elasticsearch, there is no dedicated array data type. Any field can contain zero or more values by default, however, all values in the array must be of the same data type. [source](https://www.elastic.co/guide/en/elasticsearch/reference/current/array.html)
     
-!!! "warning" keywords are always in english, even when text of the scraped article is in different language.
+!!! warning "Keywords are always in english, even when text of the scraped article is in different language."
 
 
 ## Development
