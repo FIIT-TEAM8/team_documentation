@@ -5,8 +5,10 @@
 
 ---
 
-Elasticsearch runs in Docker container.
-Currently works with one shard and one replica.
+Elasticsearch runs in Docker container, with image docker.elastic.co/elasticsearch/elasticsearch:7.15.0
+Our scraper communicate with Elasticsearch through [python library](https://elasticsearch-py.readthedocs.io/en/v7.15.1/). Make sure you are using the right version of library(7.15.1), otherwise some functionality will not work.
+
+Elastic currently works with one shard and one replica.
 
 ```
 "index": {
@@ -40,18 +42,68 @@ It uses Standard analyzer with filtering english stop words and converting text 
 }
 ```
 
-This type of analyzer is used during indexing documents and querying results. Each document contains one field(with name 'text') and it's value isn't stored in shard and replica.
+This type of analyzer is used during indexing documents and querying results. Each document contains this fields:
+
+| Field name | Type | Description |
+| ------------- | ------------- | ----------- |
+| html  | `text`  | HTML of scraped article |
+| publish  | `text` (production) \| published date of the article |
+| link | `text` _(30 days)_ | link to the article |
+| region| `text` | article's region |
+| language | `text` | article's language |
+| keywords | `text` | crime keywords, which are mentioned in article's text |
+| title | `array` | article title |
+
+Field values of each document are stored only in *_source* field, which is necessarry for some fundamental [functionality](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-source-field.html). Corresponding code to fields in configuration index file is below.
 
 ```
-"text": {
-    "type": "text",
-    "store": false,
-    "analyzer": "english_stop_analyzer",
-    "search_analyzer": "english_stop_analyzer"
-}
+"properties": {
+    "html": {
+        "type": "text",
+        "store": false,
+        "analyzer": "english_stop_analyzer",
+        "search_analyzer": "english_stop_analyzer"
+    },
+    "published": {
+        "type": "text",
+        "store": false,
+        "analyzer": "english_stop_analyzer",
+        "search_analyzer": "english_stop_analyzer"
+    },
+    "link": {
+        "type": "text",
+        "store": false,
+        "analyzer": "english_stop_analyzer",
+        "search_analyzer": "english_stop_analyzer"
+    },
+    "region": {
+        "type": "text",
+        "store": false,
+        "analyzer": "english_stop_analyzer",
+        "search_analyzer": "english_stop_analyzer"
+    },
+    "language": {
+        "type": "text",
+        "store": false,
+        "analyzer": "english_stop_analyzer",
+        "search_analyzer": "english_stop_analyzer"
+    },
+    "keywords": {
+        "type": "array",
+        "store": false,
+        "analyzer": "english_stop_analyzer",
+        "search_analyzer": "english_stop_analyzer"
+    },
+    "title": {
+        "type": "text",
+        "store": false,
+        "analyzer": "english_stop_analyzer",
+        "search_analyzer": "english_stop_analyzer"
+    }
+  }
 ```
 
-\_source attribute isn't stored too, because of sparing saving space.
+Basic attributes in *\_source* field aren't stored, because of sparing saving space.
 
 ```
 "_source": {
