@@ -47,8 +47,8 @@ This type of analyzer is used during indexing documents and querying results. Ea
 | Field name | Type | Description |
 | ------------- | ------------- | ----------- |
 | html  | `text`  | HTML of scraped article |
-| publish  | `text` (production) | published date of the article |
-| link | `text` _(30 days)_ | link to the article |
+| publish  | `text` | published date of the article |
+| link | `text` | link to the article |
 | region| `text` | article's region |
 | language | `text` | article's language |
 | keywords | `text` | crime keywords, which are mentioned in article's text |
