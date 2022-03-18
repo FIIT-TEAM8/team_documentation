@@ -56,8 +56,8 @@ For running the scrapper in standalone mode, follow these steps:
   * cd .\scraper
   * scrapy crawl news_spider <ARGUMENTS>
 
-Where arguments can be:
-  * crimes_file=<FILENAME> - filename of crimes to parse. (list_of_crimes_english.txt / list_of_crimes_slovak.txt / etc.) The path to file should be relative from **scraper/scraper/crimes/** folder.
+Where arguments can be: 
+  * crimes_file=<FILENAME> - filename of crimes to parse. (list_of_crimes_english.txt / list_of_crimes_slovak.txt / etc.) The path to file should be relative       from **scraper/scraper/crimes/** folder.
   * search_from=YYYY-MM-DD - date
   * search_to=YYYY-MM-DD - date
   * locale=locale - set your locale (en-gb / sk-sk etc.) Available locales are listed in scraper/scraper/gnewsparser/\_\_init\_\_.py file in \_\_LOCALE variable. Each locale code represents LANGUAGE-COUNTRY combo.
