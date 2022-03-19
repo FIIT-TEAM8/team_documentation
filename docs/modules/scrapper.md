@@ -32,6 +32,8 @@ This table contains fields, which are stored in each item in MongoDB and each do
   * .\venv\Scripts\activate
   * pip install -r requirements.txt
 
+After that put a ".env" file inside scraper/scraper/google_news. This file can contain your system variables for scrapy. This file will not get versioned.
+
 
 ### Database connection
 This application expects that you have a running mongoDB instance ready. Check **scraper/scraper/google_news/settings.py** for variables starting with **MONGO_DB** to see how the configuration is managed. In short, the connection is assembled with these environment variables:
