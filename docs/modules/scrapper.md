@@ -88,8 +88,9 @@ For easier controll of our scraper, we use ScrapyD. It is a simple web-server wr
 To schedule a spider, you can use any HTTP tool you wish. On most linux machines, curl is available and can be used like this:
 
 ```
-curl localhost:6800/schedule.json -d spider=news_spider -d project=default -d search_from=2021-11-14 -d search_to=2021-11-28 -d locale=en-gb -d crimes_file=list_of_crimes.txt
+curl -u username:password localhost:6800/schedule.json -d spider=news_spider -d project=default -d search_from=2021-11-14 -d search_to=2021-11-28 -d locale=en-gb -d crimes_file=list_of_crimes.txt
 ```
+Username and password for scraper is stored in our keepass password vault as **Scraper login**
 
 
 ## Deployment
