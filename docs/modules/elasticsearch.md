@@ -13,8 +13,8 @@ Elastic currently works with one shard and one replica.
 
 ```
 "index": {
-  "number_of_shards": 1,  
-  "number_of_replicas": 1 
+  "number_of_shards": 6,  
+  "number_of_replicas": 2 
 },
 ```
 
