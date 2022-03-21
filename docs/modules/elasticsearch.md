@@ -9,7 +9,7 @@ Elasticsearch runs in Docker container, with image docker.elastic.co/elasticsear
 
 Our scraper communicate with Elasticsearch through [python library](https://elasticsearch-py.readthedocs.io/en/v7.15.1/). Make sure you are using the right version of library(7.15.1), otherwise some functionality will not work.
 
-Elastic currently works with one shard and one replica.
+Elastic currently works with six shard and two replicas, which are distributed between three Docker containers.
 
 ```
 "index": {
