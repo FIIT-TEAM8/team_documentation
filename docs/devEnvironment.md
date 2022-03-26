@@ -21,7 +21,7 @@ Then run the main.py file **with superuser permissions:**
 ```
 sudo python3 main.py
 ```
-You will be prompted for a password for encrypted environmental variables used in our project. The password is located inside our Keepass password manager as **ENV variables for DEV ENVIRONMENT**. 
+You will be prompted for a password for encrypted environmental variables used in our project. The password is located inside our Keepass password manager as **ENV variables for DEV ENVIRONMENT**.  This script will also create all directories defined for volumes used by services declared in docker-compose.yml. So if you want to reset your dev environment to "factory settings", simply re-run main.py as it will also delete any existing directories that match volumes.
 
 To start the dev environment, run these commads:
 ```
