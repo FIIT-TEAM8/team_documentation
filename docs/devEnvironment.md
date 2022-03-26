@@ -27,7 +27,9 @@ To start the dev environment, run these commads:
 ```
 docker-compose --env-file ./local.env up -d
 ```
-The services are available on your localhost:PORT. The ports used can be checked in the **docker-compose.yml** file you just ran, but they are the same values as our production environment.
+The services are available on your localhost:PORT. The ports used can be checked in the **docker-compose.yml** file you just ran, but they are the same values as our production environment. Your development environment is ready to go when containers **es_indexer** and **es_setup** have exited, which usually takes about 1 minute after start.
+
+By default all services are configured to only use 1 CPU and 1 GB of RAM, except for elastic which is configured to use 4 GB of RAM, which is the minimum required by this application. This limitation improves performance for your machine when development environment is active.
   
 
 This configuration will replicate our [**data_infrastructure**](https://github.com/FIIT-TEAM8/data_infrastructure), meaning you will have mongo, express, postgres and elastic configured and ready to go. Elastic runs on a single-node configuration with SSL configured. Login credentials can be found inside local.env file.
@@ -37,7 +39,7 @@ The encrypted file contained in dev_environment source repository contains crede
 ### Pulling data from production database
 Each time you run **docker-compose up**, **es_indexer** container with python script will wait by default 60 seconds for Elasticsearch and MongoDB containers to start.
 
-When, the time passes, es_indexer connects to MongoDB articles collection on our production machine. It retrieves by default 100 articles (you can change this through **NUMBER_OF_ARTICLES** in es_indexer.env),
+When, the time passes, es_indexer connects to MongoDB articles collection on our production machine. It retrieves by default 100 articles (you can change this through **INDEXER_NUMBER_OF_ARTICLES** in local.env),
 index them in your local Elasticsearch container and seed your local MongoDB with them. 
 
 
