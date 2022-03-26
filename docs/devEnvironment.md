@@ -30,7 +30,7 @@ docker-compose --env-file ./local.env up -d
 The services are available on your localhost:PORT. The ports used can be checked in the **docker-compose.yml** file you just ran, but they are the same values as our production environment.
   
 
-This configuration will replicate our (**data_infrastructure**)[https://github.com/FIIT-TEAM8/data_infrastructure], meaning you will have mongo, express, postgres and elastic configured and ready to go. Elastic runs on a single-node configuration with SSL configured. Login credentials can be found inside local.env file.
+This configuration will replicate our [**data_infrastructure**](https://github.com/FIIT-TEAM8/data_infrastructure), meaning you will have mongo, express, postgres and elastic configured and ready to go. Elastic runs on a single-node configuration with SSL configured. Login credentials can be found inside local.env file.
 
 The encrypted file contained in dev_environment source repository contains credentials for our remote production infrastructure, values contained inside local.env file are not important and only refer to credentials that will be used on your local machine, therefore this file is not encrypted in version control.
 
