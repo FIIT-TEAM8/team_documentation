@@ -13,6 +13,9 @@ We use python Flask for our API server. Server listens for HTTP requests on vari
   * python -m venv .\venv
   * .\venv\Scripts\activate
   * pip install -r requirements.txt
+  * create .env file inside the root of the directory
+
+The .env file should contain all environmental variables that are being read by Flask. You can check our [docker-compose.yml](https://github.com/FIIT-TEAM8/service_infrastructure/blob/main/docker-compose.yml) file inside our service_infrastructure repository for env files that are being read by Flask, open those env files and simply copy-paste the variables to your local .env file. You can change the contents of these variables to point to a development environment running on your machine.
 
 The entrypoint for this project is in the **app.py** file in the root of this repository. The rest of the code is inside the **api** folder. This also contains multiple versions of our API. Each version contains **api_settings.py** folder containing settings varables for configuration, as well as required environment variables. 
 
