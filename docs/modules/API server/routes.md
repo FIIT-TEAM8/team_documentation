@@ -20,7 +20,7 @@ This returns articles that match a given query
 curl -X GET https://team08-21.studenti.fiit.stuba.sk/api/v2/search/?q=Marian+Kocner
 ```
 ```
-curl -X GET https://team08-21.studenti.fiit.stuba.sk/api/v2/search/?q=Marian+Kocner&from=2020-01-01&to=2021-01-01&page=2&size=10
+curl -X GET https://team08-21.studenti.fiit.stuba.sk/api/v4/search/?q=Marian+Kocner&regions=[sk, hu, it]&keywords=[Bomb Threat, Murder]&from=2020-01-01&to=2021-01-01&page=2&size=10
 ```
 
 ### Sample response
