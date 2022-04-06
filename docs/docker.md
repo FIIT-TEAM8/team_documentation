@@ -38,3 +38,10 @@ This will compress and encrypt the **env** directory with it's contents and crea
 !!! warning "When to encrypt env directory and push it to Github"
 
     You almost never want to run the script for encrypting your env directory. The environmental values versioned on Github should be set to values working for our production server. If you change something inside env directory on your local machine when developing, **do not** push it to Github.
+    
+## Data server
+Another docker compose file containing our data infrastructure (elastic, mongo, scraper, postgres) is located in (this)[https://github.com/FIIT-TEAM8/data_infrastructure] repository. It works the same way, even has the same mechanism for safely storing login credentials. However, to run this docker compose file, you need to run it loke this:
+
+```
+docker-compose --env-file env/elastic_infrastructure.env up -d
+```
