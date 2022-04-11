@@ -94,7 +94,9 @@ curl -X GET https://team08-21.studenti.fiit.stuba.sk/api/v4/report?ids=[6239b1ed
 
 ### Sample response
 
+
 ```
+{
   "results": [
     {
       "_id": "6239b1eddf4b7decb33fbaf2",
@@ -115,9 +117,7 @@ curl -X GET https://team08-21.studenti.fiit.stuba.sk/api/v4/report?ids=[6239b1ed
       "published": "2020-01-01",
       "region":"gb",
       "title": "Sample article number 1"
-    },
-    
-    ...
-  
-  ],
-  ```
+    }
+  ]
+}
+```
