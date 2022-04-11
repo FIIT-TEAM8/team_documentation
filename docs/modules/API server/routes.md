@@ -120,3 +120,4 @@ curl -X GET https://team08-21.studenti.fiit.stuba.sk/api/v4/report?ids=[6239b1ed
     ...
   
   ],
+  ```
