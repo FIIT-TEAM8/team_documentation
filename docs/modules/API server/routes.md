@@ -77,7 +77,7 @@ curl -X GET https://team08-21.studenti.fiit.stuba.sk/api/v4/archive?link=https:/
       "title": "Sample article number 0"
     }
 }
- ```
+```
   
 ## Get articles for PDF report
 This returns one or multiple articles that match a list of given ids
