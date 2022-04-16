@@ -91,13 +91,15 @@ To schedule a spider, you can use any HTTP tool you wish. On most linux machines
 curl -u username:password localhost:6800/schedule.json -d spider=news_spider -d project=default -d search_from=2021-11-14 -d search_to=2021-11-28 -d locale=en-gb -d crimes_file=list_of_crimes.txt
 ```
 Username and password for scraper is stored in our keepass password vault as **Scraper login**
+    
+ScrapyD can also limit the number of concurent spiders, which at this moment is configured to 5. This means that at any moment, maximum number of 5 spiders can run concurrenly. Other spiders will be waiting in **pending** state and are executed when there is a free spot.
 
 
 ## Deployment
 After any commit / merge to the main branch, a github action is ran that builds the docker image, pushes it to dockerhub and updates the running container on our production server.
     
 ## Automatic scheduling
-Scraper is currently configured to run every day at 05:00 to scrape articles from the previous day. It is achieved by utilizing **cron** that runs a python script. This scheduler is it's own very small module and is deployed as a standalone docker container our our service infrastructure machine. The source code can be found [here](https://github.com/FIIT-TEAM8/scraping_scheduler)
+Scraper is currently configured to run every day at 05:00 to scrape articles from the previous day. It is achieved by utilizing **cron** that runs a python script. It is communicating to scrapyd server and runs a job for every region we support. This scheduler is it's own very small module and is deployed as a standalone docker container our our service infrastructure machine. The source code can be found [here](https://github.com/FIIT-TEAM8/scraping_scheduler)
 
 
 ## Testing:
