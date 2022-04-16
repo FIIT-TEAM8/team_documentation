@@ -1,5 +1,6 @@
 # API routes
 
+Swagger docs: https://app.swaggerhub.com/apis-docs/AMS89/AMS/1.0.0
 
 ## Search articles
 This returns articles that match a given query
