@@ -95,6 +95,9 @@ Username and password for scraper is stored in our keepass password vault as **S
 
 ## Deployment
 After any commit / merge to the main branch, a github action is ran that builds the docker image, pushes it to dockerhub and updates the running container on our production server.
+    
+## Automatic scheduling
+Scraper is currently configured to run every day at 05:00 to scrape articles from the previous day. It is achieved by utilizing **cron** that runs a python script. This scheduler is it's own very small module and is deployed as a standalone docker container our our service infrastructure machine. The source code can be found [here](https://github.com/FIIT-TEAM8/scraping_scheduler)
 
 
 ## Testing:
