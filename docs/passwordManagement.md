@@ -6,7 +6,7 @@ Download keepass ZIP file located in the root of our Google Drive. Unzip the con
 To open our password vault, click on **File -> Open -> Open URL**. In the URL field, enter the following value:
 
 ```
-scp://team08-21.studenti.fiit.stuba.sk/home/fiitkar/.keepass/kps.kdbx
+scp://adversea.com/home/fiitkar/.keepass/kps.kdbx
 ```
 
 In the username and password field, please enter the SSH credentials for user **fiitkar**. After that you can select whether you want to be prompted for this login next time.
