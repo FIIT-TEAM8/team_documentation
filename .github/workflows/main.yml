@@ -54,5 +54,5 @@ jobs:
         username: ${{ secrets.DEPLOY_USERNAME }}
         password: ${{ secrets.DEPLOY_PASSWORD }}
         script: |
-          cd /home/fiitkar/docker-folder/
-          docker-compose pull && docker-compose up --detach && docker system prune -f
+          cd /home/fiitkar/data_infrastructure
+          docker-compose pull documentation && docker-compose --env-file env/elastic_infrastructure.env up -d --no-deps --build documentation && docker system prune -f
