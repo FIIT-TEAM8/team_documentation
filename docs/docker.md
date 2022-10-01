@@ -20,7 +20,7 @@ Each service should have it's own .env file, however some .env files **should be
     Flask server (API) and scraper components both connect to mongoDB using the same credentials. They each have their separate .env files (flask.env and scraper.env),       but both use one common .env file - **mongo_connection.env**. This file contains connection URL, login credentials and other data required for mongoDB access. This       approach makes it easy to change this data when we decide to change login credentials or rename our database collections.
 
 ### Versioning
-The docker-compose file controlling our main infrastructure is versioned in [this](https://github.com/FIIT-TEAM8/service_config) repository. Along with this file there are also our **.env** files containing configuration parameters for each service. As these files can also contain passwords, the **tar.gz**
+The docker-compose file controlling our infrastructure is versioned in [this](https://github.com/FIIT-TEAM8/infrastructure) repository. Along with this file there are also our **.env** files containing configuration parameters for each service. As these files can also contain passwords, the **tar.gz**
  is encrypted using **AES-256** standard. This was achieved by running **encrypt_env.sh** shell script and to decrypt this archive and prepare **env** directory for use, simply run the **decrypt_env.sh** script. Both scripts expect 1 positional argument: a password used to for encryption / decryption. The password used is contained in our keepass password vault. E.g:
  
 To decrypt the archive, run:
@@ -39,9 +39,3 @@ This will compress and encrypt the **env** directory with it's contents and crea
 
     You almost never want to run the script for encrypting your env directory. The environmental values versioned on Github should be set to values working for our production server. If you change something inside env directory on your local machine when developing, **do not** push it to Github.
     
-## Data server
-Another docker compose file containing our data infrastructure (elastic, mongo, scraper, postgres) is located in (this)[https://github.com/FIIT-TEAM8/data_infrastructure] repository. It works the same way, even has the same mechanism for safely storing login credentials. However, to run this docker compose file, you need to run it loke this:
-
-```
-docker-compose --env-file env/elastic_infrastructure.env up -d
-```
