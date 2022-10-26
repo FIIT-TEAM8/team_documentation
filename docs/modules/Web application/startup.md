@@ -42,5 +42,5 @@ To start frontend paste the following command in console:
 * `cd ./frontend && npm run start`
 
 ## Some NOTES
-Never ever delete **.env** or **env.sh** from frontend repository. Thanks to this files we are creating **env-config.js** during docker image build.
-**env-config.js** is imported in index.html, which allows injecting env variables in production after image build. If you want to learn more I recommend this tutorial(https://www.freecodecamp.org/news/how-to-implement-runtime-environment-variables-with-create-react-app-docker-and-nginx-7f9d42a91d70/)
+#### Never ever delete **.env** or **env.sh** from frontend repository.
+Thanks to this files we are creating **env-config.js** during docker image build. **env-config.js** is imported in index.html, which allows injecting env variables in production after image build. If you want to learn more I recommend this tutorial(https://www.freecodecamp.org/news/how-to-implement-runtime-environment-variables-with-create-react-app-docker-and-nginx-7f9d42a91d70/)
