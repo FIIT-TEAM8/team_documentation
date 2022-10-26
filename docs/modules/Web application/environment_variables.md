@@ -16,7 +16,6 @@ This is the default configuration used while developing the application or while
 | DEV_DATA_API_HOST | `https://localhost:5000/api` | Destination of data api calls when not in production |
 | DATA_API_HOST | `http://flask_server:5000` | Destination of data api calls in production |
 | DATA_API_VERSION | `v3` | Which version of data api should the calls be forwarded to |
-
 | POSTGRES_USER | `postgres` | Username |
 | POSTGRES_PASSWORD | `postgres` | Password |
 | POSTGRES_DB | `ams` | Name of the database, which contains all tables |
