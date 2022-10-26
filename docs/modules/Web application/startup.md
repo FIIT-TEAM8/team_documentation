@@ -33,7 +33,7 @@ volumes:
 
 ## How to run
 
-Before running the following commands, make sure you have finished **Set up** chapter and your location in console is in a directory, which contains *frontend* and *node_server* repositories.
+Before running the following commands, make sure you have finished **Set up** chapter and your location in console is in a directory, which contains frontend and node_server repositories.
 To start node_server, with required database, paste the following commands in console:
 * `docker-compose up -d`
 * `cd ./node_server && npm run dev`
@@ -41,7 +41,7 @@ To start node_server, with required database, paste the following commands in co
 To start frontend paste the following command in console:
 * `cd ./frontend && npm run start`
 
-## Some NOTES
+## Some Notes
 
 !!! warning "Never ever delete **.env** or **env.sh** from frontend repository."
 
