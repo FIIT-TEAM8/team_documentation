@@ -7,8 +7,8 @@
 * `cd ./node_server && npm install && cd ..`
 
 Thanks to previous steps we have cloned all required repositories and installed their dependencies.
-However our node_server uses PostreSQL. Because of that we are going to create a docker-compose.yaml, which runs
-a container of this database in our local machine.
+However our *node_server* uses PostreSQL. Because of that, we are going to create a *docker-compose.yaml*, which runs
+an instance of this database in a container on our local machine.
 
 * Open VS Code in directory, which we have created in first step of this set up (`code .` in that directory)
 * In VS Code create new file with name `docker-compose.yaml`
@@ -33,12 +33,12 @@ volumes:
 
 ## How to run
 
-Before running the following commands, make sure you have finished **Set up** chapter and your location in console is in a directory, which contains frontend and node_server repositories.
-To start node_server, with required database, paste the following commands in console:
+Before running the following commands, make sure you have finished **Set up** chapter and your location in console is in a directory, which contains *frontend* and *node_server* repositories.
+To start *node_server*, with required database, paste the following commands in console:
 * `docker-compose up -d`
 * `cd ./node_server && npm run dev`
 
-To start frontend paste the following command in console:
+To start *frontend* paste the following command in console:
 * `cd ./frontend && npm run start`
 
 ## Some NOTES
