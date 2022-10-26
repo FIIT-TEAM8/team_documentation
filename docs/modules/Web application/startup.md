@@ -1,3 +1,13 @@
+---
+[**Frontend Github repo**](https://github.com/FIIT-TEAM8/frontend)
+
+---
+
+---
+[**Node_server Github repo**](https://github.com/FIIT-TEAM8/node_server)
+
+---
+
 ## Set up
 * I recommend creating new folder in root directory of WSL2: `mkdir <folder_name>`
 * `cd <folder_name>`
