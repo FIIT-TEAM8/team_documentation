@@ -6,6 +6,6 @@ COPY site .
 
 EXPOSE 8888
 
-CMD [ "python", "-m", "http.server", "8888" ]
+CMD [ "python", "-m", "http.server", "9000" ]
 
 
