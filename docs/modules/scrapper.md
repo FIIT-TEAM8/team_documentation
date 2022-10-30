@@ -24,6 +24,8 @@ This table contains fields, which are stored in each item in MongoDB and each do
     
 !!! warning "Keywords are always in english, even when text of the scraped article is in different language."
 
+
+
 ## Proxies
 After some time, google news rss stream started detecting that we were a scraping bot. To avoid this and keep scraping articles, we use proxies. However, these proxies will also get banned, if they keep the same IP addresses. For this issue, we use TOR network proxies. Scraper rotates between TOR proxies that switch IP address every 15 seconds.
 
