@@ -40,7 +40,8 @@ After some time, google news rss stream started detecting that we were a scrapin
 After that put a ".env" file inside scraper/scraper/google_news. This file can contain your system variables for scrapy. This file will not get versioned.
 
     
- ### Development environment
+
+### Development environment
 Setup [development environment](../devEnvironment.md) according to it's documentation. Do not forget to also start your proxies (also part of the linked documentation page).
     
 
