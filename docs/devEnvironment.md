@@ -36,7 +36,16 @@ This configuration will replicate our [**data_infrastructure**](https://github.c
 
 The encrypted file contained in dev_environment source repository contains credentials for our remote production infrastructure, values contained inside local.env file are not important and only refer to credentials that will be used on your local machine, therefore this file is not encrypted in version control.
 
-### Pulling data from production database
+## Proxy setup
+If you need to have TOR proxies up and running (probably only needed for scraper development), you can launch them **after** you set up the development environment described above. From the dev_environment directory, execute:
+
+```
+cd proxy
+docker-compose up -d
+```
+You will now have 3 TOR proxy nodes running on the same network as the main dev_environment nodes. There is even a multitool container bundled which contains various network debugging tools (pcap, ping, curl etc.) you migh want to use if you encountre problems.
+
+## Pulling data from production database
 Each time you run **docker-compose up**, **es_indexer** container with python script will wait by default 60 seconds for Elasticsearch and MongoDB containers to start.
 
 When, the time passes, es_indexer connects to MongoDB articles collection on our production machine. It retrieves by default 100 articles (you can change this through **INDEXER_NUMBER_OF_ARTICLES** in local.env),
