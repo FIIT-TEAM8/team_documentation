@@ -37,6 +37,10 @@ After some time, google news rss stream started detecting that we were a scrapin
 
 After that put a ".env" file inside scraper/scraper/google_news. This file can contain your system variables for scrapy. This file will not get versioned.
 
+    
+ ### Development environment
+Setup [development environment](../devEnvironment.md) according to it's documentation. Do not forget to also start your proxies (also part of the linked documentation page).
+    
 
 ### Database connection
 This application expects that you have a running mongoDB instance ready. Check **scraper/scraper/google_news/settings.py** for variables starting with **MONGO_DB** to see how the configuration is managed. In short, the connection is assembled with these environment variables:
@@ -52,6 +56,7 @@ This application expects that you have a running mongoDB instance ready. Check *
  * ES_PORT - port for Elasticsearch. Default is **9200**
  * ELASTIC_INDEX_CONFIG - name of the index configuration file. Default is **articles_index_config.json**
  * ELASTIC_INDEX_NAME - name of the index, which is created based on index configuration file. Default is **articles_index**
+    
 
 ### Running the scrapper
 This application can be launched using two different methods: standalone or using scrapyD server abstraction. For quick testing when developing, the standalone method is sufficient. Details about scrapyD are discussed in the **ScrapyD** chapter. 
@@ -76,6 +81,7 @@ Example:
 ```
  scrapy crawl news_spider -a crimes_file=list_of_crimes_english.txt -a search_from=2020-01-01 -a search_to=2020-01-05 -a locale=en-gb
 ```
+    
 
 ### Publishing changes to Github
 Very important note here: If you install a new package using **pip**, don't use pip freeze for updating the requirements.txt file. This can and probably will cause trouble in production if you developed your changes on windows machine. For the best compatibility, use command pip-chill to update requirements.txt. Example:
