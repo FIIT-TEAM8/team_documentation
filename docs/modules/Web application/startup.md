@@ -33,7 +33,7 @@ services:
     image: fiitteam8/postgres_db:latest
     container_name: postgres_db
     env_file:
-      - ../node_server/.env
+      - ./node_server/.env
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
