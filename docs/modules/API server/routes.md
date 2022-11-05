@@ -18,10 +18,10 @@ This returns articles that match a given query
 ### Examples
 
 ```
-curl -X GET https://team08-21.studenti.fiit.stuba.sk/api/v4/search?q=Marian+Kocner
+curl -X GET https://adversea.com/api/v4/search?q=Marian+Kocner
 ```
 ```
-curl -X GET https://team08-21.studenti.fiit.stuba.sk/api/v4/search?q=Marian+Kocner&regions=[sk, hu, it]&keywords=[Bomb Threat, Murder]&from=2020-01-01&to=2021-01-01&page=2&size=10
+curl -X GET https://adversea.com/api/v4/search?q=Marian+Kocner&regions=[sk, hu, it]&keywords=[Bomb Threat, Murder]&from=2020-01-01&to=2021-01-01&page=2&size=10
 ```
 
 ### Sample response
@@ -59,7 +59,7 @@ This returns one article that match a given link
 ### Examples
 
 ```
-curl -X GET https://team08-21.studenti.fiit.stuba.sk/api/v4/archive?link=https://www.bbc.com/news/world-middle-east-35219693
+curl -X GET https://adversea.com/api/v4/archive?link=https://www.bbc.com/news/world-middle-east-35219693
 ```
 
 ### Sample response
@@ -90,7 +90,7 @@ This returns one or multiple articles that match a list of given ids
 ### Examples
 
 ```
-curl -X GET https://team08-21.studenti.fiit.stuba.sk/api/v4/report?ids=[6239b1eddf4b7decb33fbaf2, 206239b1ecdf4b7decb33fbaee]
+curl -X GET https://adversea.com/api/v4/report?ids=[6239b1eddf4b7decb33fbaf2, 206239b1ecdf4b7decb33fbaee]
 ```
 
 ### Sample response
