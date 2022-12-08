@@ -37,7 +37,7 @@ curl -X GET https://adversea.com/stats/api/search?q=Marian+Kocner&regions=[sk, c
 ```
 {
     "articles_count": 27,
-    "query": "Marian Kocner",
+    "query": "Robert Fico",
     "search_from": "",
     "search_to": "",
     "stats": {
@@ -87,7 +87,7 @@ Returns linked articles after clicking on the selected part of the graph.
 ### Examples
 
 ```
-curl -X GET https://adversea.com/selected?page=1&ids=[626b54b99929b8272a29bd18,630837397963253efec178b1, ... ]
+curl -X GET https://adversea.com/stats/api/selected?page=1&ids=[626b54b99929b8272a29bd18,630837397963253efec178b1, ... ]
 ```
 
 ### Sample response
