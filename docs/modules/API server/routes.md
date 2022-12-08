@@ -54,7 +54,7 @@ This returns one article that match a given link
 
 ### Parameters
 
-* link - link of article to be retriewed
+* link - link of article to be retrieved
 
 ### Examples
 
@@ -85,7 +85,7 @@ This returns one or multiple articles that match a list of given ids
 
 ### Parameters
 
-* ids - [id1, id2, id3, ...] list of article's ids to be retriewed
+* ids - [id1, id2, id3, ...] list of article's ids to be retrieved
 
 ### Examples
 
