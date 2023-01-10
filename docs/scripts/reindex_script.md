@@ -1,4 +1,4 @@
-# Development environment
+# reindex script
 ---
 [**Github repo**](https://github.com/FIIT-TEAM8/reindex_script)
 
